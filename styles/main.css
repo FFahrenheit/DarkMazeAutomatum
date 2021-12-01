@@ -24,3 +24,22 @@ body, html{
     width: 4vh;
     height: 4vh;
 }
+
+.page-footer{
+    background-color: rgb(24, 24, 24);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 5px;
+    max-height: 40px i !important;
+    padding-bottom: 5px;
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
+.link-footer:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
