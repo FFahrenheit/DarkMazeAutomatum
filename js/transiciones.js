@@ -34,3 +34,24 @@ const transiciones = [
     [20, 25, 25, 24],
     [26, 26, 26, 26]
 ];
+
+const functions = {
+    'ArrowUp': () => performButton(0),
+    'ArrowDown': () => performButton(2),
+    'ArrowRight': () => performButton(1),
+    'ArrowLeft': () => performButton(3),
+};
+
+const simbolos = [
+    '<i class="fas fa-arrow-circle-up mx-1"></i>',
+    '<i class="fas fa-arrow-circle-right mx-1"></i>',
+    '<i class="fas fa-arrow-circle-down mx-1"></i>',
+    '<i class="fas fa-arrow-circle-left mx-1"></i>'
+];
+
+const clases = [
+    'border-top: 1px white solid;',
+    'border-right: 1px white solid;',
+    'border-bottom: 1px white solid;',
+    'border-left: 1px white solid;',
+];
