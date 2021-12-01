@@ -3,3 +3,15 @@ body, html{
     height: 100%;
     color: ghostwhite;
 }
+
+.botones button{
+    border-radius: 50%;
+}
+/* 
+.hide-button{
+    background: transparent;
+}
+
+.hide-button:hover{
+    cursor: default;
+} */

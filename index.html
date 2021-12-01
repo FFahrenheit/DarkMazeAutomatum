@@ -26,7 +26,37 @@
 <body>
 
     <div class="w-100 h-100 text-center bg-dark">
-        <h1 class="py-3">Hola</h1>
+        <h1 class="py-3">Dark Maze</h1>
+        
+        <div class="botones">
+            <h5>
+                Último movimiento: 
+                <span id="ultimo">
+                    <i class="fas fa-circle"></i>
+                </span>
+            </h5>
+            <button class="btn btn-light btn-lg" onclick="performButton(0)">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            <br>
+            <button class="btn btn-light btn-lg mr-4" onclick="performButton(3)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <!-- <button class="btn btn-light btn-lg hide-button">
+                <i class="fas fa-arrow-right"></i>
+            </button> -->
+            <button class="btn btn-light btn-lg ml-4" onclick="performButton(2)">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <br>
+            <button class="btn btn-light btn-lg" onclick="performButton(1)">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+            <h6 class="mt-3">
+                Historial de movimientos:<br><br>
+                <span id="historial"></span>
+            </h6>
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -41,6 +71,7 @@
         crossorigin="anonymous"></script>
     <script src="js/transiciones.js"></script>
     <script src="js/automata.js"></script>
+    <script src="js/controller.js"></script>
 </body>
 
 </html>
