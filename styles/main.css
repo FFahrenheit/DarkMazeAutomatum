@@ -18,5 +18,9 @@ body, html{
 .celda{
     border: 1px black solid;
     /* float: left; */
+}
 
+.player{
+    width: 4vh;
+    height: 4vh;
 }

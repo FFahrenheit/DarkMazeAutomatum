@@ -1,6 +1,21 @@
 const ultimo = document.getElementById('ultimo');
 const historial = document.getElementById('historial');
 const contenido = document.getElementById('contenido');
+const mostrar = document.getElementById('mostrar');
+const mensaje = document.getElementById('mensaje');
+const automata = new Automata(transiciones, 0);
+let show = false;
+
+const player = `
+    <div class="spinner-grow text-light player" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>`;
+
+mostrar.addEventListener('change', e => {
+    show = mostrar.checked;
+    renderBoard()
+    move(automata.estadoActual, player);
+});
 
 const functions = {
     'ArrowUp': () => performButton(0),
@@ -28,7 +43,7 @@ function renderBoard(){
     for(let i = 0; i < 7; i++){
         for(let j = 0; j < 5; j++){
             if( i === 0 && j == 2){
-                body += `<div id="25"></div>`;
+                body += `<div id="26"></div>`;
             }
             else if( i === 6 && j == 2){
                 body += `<div id="0"></div>`;
@@ -43,16 +58,19 @@ function renderBoard(){
             }
         }
     }
-    console.log(body);
     contenido.innerHTML = body;
 }
 
 //Init
 (()=>{
     renderBoard();
+    move(0, player);
 })();
 
-function getStyle(n){
+function getStyle(n){  
+    if( ! show ){
+        return '';
+    }
     let style = '';
     const movimientos = transiciones[n];
 
@@ -65,12 +83,23 @@ function getStyle(n){
 }
 
 function performButton(control){
-    console.log({
-        control
-    });
     ultimo.innerHTML = simbolos[control];
     historial.innerHTML += simbolos[control];
-    goTo(n);
+    const estadoActual = automata.estadoActual;
+    const siguienteEstado = automata.proximoEstado(control);
+
+    console.log({
+        estadoActual,
+        input: control,
+        siguienteEstado
+    });
+
+    move(estadoActual, '');
+    move(siguienteEstado, player);
+
+    if(siguienteEstado == 26){
+        mensaje.innerHTML = `<h3>¡Has ganado!</h3>`
+    }
 }
 
 document.addEventListener('keydown', e => {
@@ -81,6 +110,7 @@ document.addEventListener('keydown', e => {
     }
 });
 
-function goTo(n){
-    console.log(n);
+function move(id, content){
+    const celda = document.getElementById(id);
+    celda.innerHTML = content;
 }
