@@ -2,16 +2,21 @@ body, html{
     font-family: 'Acme', sans-serif;
     height: 100%;
     color: ghostwhite;
+    background-color: rgb(52,58,64);
 }
 
 .botones button{
     border-radius: 50%;
 }
-/* 
-.hide-button{
-    background: transparent;
+
+#contenido{
+    display: grid;
+    grid-template-columns: repeat(5, 5vh);
+    grid-template-rows: repeat(7, 5vh);
 }
 
-.hide-button:hover{
-    cursor: default;
-} */
+.celda{
+    border: 1px black solid;
+    /* float: left; */
+
+}
