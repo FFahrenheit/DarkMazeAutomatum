@@ -1,31 +1,32 @@
-body, html{
-    font-family: 'Acme', sans-serif;
+body,
+html {
+    font-family: "Acme", sans-serif;
     height: 100%;
     color: ghostwhite;
-    background-color: rgb(52,58,64);
+    background-color: rgb(52, 58, 64);
 }
 
-.botones button{
+.botones button {
     border-radius: 50%;
 }
 
-#contenido{
+#contenido {
     display: grid;
     grid-template-columns: repeat(5, 5vh);
     grid-template-rows: repeat(7, 5vh);
 }
 
-.celda{
+.celda {
     border: 1px black solid;
     /* float: left; */
 }
 
-.player{
+.player {
     width: 4vh;
     height: 4vh;
 }
 
-.page-footer{
+.page-footer {
     background-color: rgb(24, 24, 24);
     position: fixed;
     left: 0;
@@ -39,7 +40,26 @@ body, html{
     align-content: center;
 }
 
-.link-footer:hover{
+.link-footer:hover {
     text-decoration: none;
     cursor: pointer;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+    border-color: black !important;
+    box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0) !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: black !important;
+    background-color: black !important;
+}
+
+.custom-control-input:active ~ .custom-control-label::before {
+    background-color: black !important;
+    border-color: black !important;
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: black !important;
 }

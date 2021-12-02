@@ -13,7 +13,7 @@ const player = `
 
 mostrar.addEventListener('change', e => {
     show = mostrar.checked;
-    renderBoard()
+    renderBoard();
     move(automata.estadoActual, player);
 });
 
@@ -21,17 +21,19 @@ function renderBoard(){
     let body = '';
     for(let i = 0; i < 7; i++){
         for(let j = 0; j < 5; j++){
+
             if( i === 0 && j == 2){
                 body += `<div id="26"></div>`;
             }
             else if( i === 6 && j == 2){
                 body += `<div id="0"></div>`;
             }else if(i > 0 && i < 6){
+
                 const n = (i - 1)*5 + j + 1;
                 const style = getStyle(n);
-                body += `
-                <div style="${ style }" id="${n}">
-                </div>`;
+                body += `<div style="${ style }" id="${n}">
+                        </div>`;
+            
             }else{
                 body += '<div></div>'
             }
@@ -42,6 +44,7 @@ function renderBoard(){
 
 //Init
 (()=>{
+    console.table(transiciones);
     renderBoard();
     move(0, player);
 })();
